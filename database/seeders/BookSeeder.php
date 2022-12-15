@@ -18,9 +18,9 @@ class BookSeeder extends Seeder
         //
 
         $data = [
-                'judul' => 'Hujan',
-                'penulis' => 'Tere Liye',
-                'genre' => 'Fiksi'
+                'judul' => 'Harry Potter',
+                'penulis' => 'JK Rowling',
+                'genre' => 'Fantasy',
         ];
 
         Book::create($data);

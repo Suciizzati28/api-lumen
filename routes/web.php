@@ -23,4 +23,10 @@ $router->group(['prefix' => 'api'], function () use ($router) {
     $router->delete('book/{id}', ['uses' => 'BookController@destroy']);
     $router->put('book/{id}', ['uses' => 'BookController@update']);
     $router->post('book', ['uses' => 'BookController@create']);
+
+    $router->get('peminjam',  ['uses' => 'PeminjamController@index']);
+    $router->get('peminjam/{id}', ['uses' => 'PeminjamController@show']);
+    $router->delete('peminjam/{id}', ['uses' => 'PeminjamController@destroy']);
+    $router->put('peminjam/{id}', ['uses' => 'PeminjamController@update']);
+    $router->post('peminjam', ['uses' => 'PeminjamController@create']);
 });

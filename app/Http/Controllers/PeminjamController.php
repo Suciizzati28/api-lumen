@@ -15,6 +15,8 @@ class PeminjamController extends Controller
     public function index()
     {
         //
+        $peminjam = Peminjam::all();
+        return response()->json($peminjam);
     }
 
     /**
@@ -22,9 +24,18 @@ class PeminjamController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
         //
+        $this->validate($request, [
+            'nama' => 'required',
+            'alamat' => 'required',
+            'no_telp' => 'required'
+        ]);
+
+        Peminjam::create($request->all());
+
+        return response()->json("Data berhasil ditambahkan");
     }
 
     /**
@@ -44,9 +55,11 @@ class PeminjamController extends Controller
      * @param  \App\Models\Peminjam  $peminjam
      * @return \Illuminate\Http\Response
      */
-    public function show(Peminjam $peminjam)
+    public function show($id)
     {
         //
+        $peminjam = Peminjam::where('id', $id)->get();
+        return response()->json($peminjam);
     }
 
     /**
@@ -67,9 +80,22 @@ class PeminjamController extends Controller
      * @param  \App\Models\Peminjam  $peminjam
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Peminjam $peminjam)
+    public function update(Request $request, $id)
     {
         //
+        $this->validate($request, [
+            'nama' => 'required',
+            'alamat' => 'required',
+            'no_telp' => 'required'
+        ]);
+
+        $peminjam = Peminjam::find($id);
+        $peminjam->nama = $request->input('nama');
+        $peminjam->alamat = $request->input('alamat');
+        $peminjam->no_telp = $request->input('no_telp');
+        $peminjam->save();
+
+        return response()->json("Data berhasil diubah");
     }
 
     /**
@@ -78,8 +104,12 @@ class PeminjamController extends Controller
      * @param  \App\Models\Peminjam  $peminjam
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Peminjam $peminjam)
+    public function destroy($id)
     {
         //
+        $peminjam = Peminjam::find($id);
+        $peminjam->delete();
+
+        return response()->json("Data berhasil dihapus");
     }
 }

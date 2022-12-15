@@ -27,6 +27,12 @@ class BookController extends Controller
     public function create(Request $request)
     {
         //
+        $this->validate($request, [
+            'judul' => 'required',
+            'penulis' => 'required',
+            'genre' => 'required'
+        ]);
+
         Book::create($request->all());
 
         return response()->json("Data berhasil ditambahkan");

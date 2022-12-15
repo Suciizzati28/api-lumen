@@ -15,10 +15,14 @@ return new class extends Migration
     {
         Schema::create('peminjams', function (Blueprint $table) {
             $table->id();
+            $table->foreign('id_buku')->references('id')->on('books');
             $table->string('nama');
             $table->string('alamat');
             $table->string('no_telp');
             $table->timestamps();
+            
+
+        Schema::enableForeignKeyConstraints();
         });
     }
 

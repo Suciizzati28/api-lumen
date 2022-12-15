@@ -68,7 +68,7 @@ class PetugasController extends Controller
     public function destroy($id)
     {
         Petugas::where('id', $id)->delete();
-        return response()->json("Data berhasil dihapus");
+        return response()->json("Data petugas berhasil dihapus");
     }
 
 }

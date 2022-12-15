@@ -23,4 +23,6 @@ $router->group(['prefix' => 'api'], function () use ($router) {
     $router->delete('book/{id}', ['uses' => 'BookController@destroy']);
     $router->put('book/{id}', ['uses' => 'BookController@update']);
     $router->post('book', ['uses' => 'BookController@create']);
+    
+    $router->get('petugas',  ['uses' => 'PetugasController@index']);
 });

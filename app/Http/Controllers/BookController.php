@@ -96,6 +96,6 @@ class BookController extends Controller
     public function destroy($id)
     {
         Book::where('id', $id)->delete();
-        return response()->json("Data berhasil dihapus");
+        return response()->json("Data buku berhasil dihapus");
     }
 }

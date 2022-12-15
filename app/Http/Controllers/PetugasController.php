@@ -36,7 +36,7 @@ class PetugasController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Book  $book
+     * @param  \App\Models\Petugas  $petugas
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -44,6 +44,18 @@ class PetugasController extends Controller
         //
         Petugas::where('id', $id)->update($request->all());
         return response()->json("Data berhasil diupdate");
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  \App\Models\Petugas  $petugas
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy($id)
+    {
+        Petugas::where('id', $id)->delete();
+        return response()->json("Data berhasil dihapus");
     }
 
 }

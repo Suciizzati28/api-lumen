@@ -42,7 +42,7 @@ class PetugasController extends Controller
         //
         Petugas::create($request->all());
 
-        return response()->json("Data Petugas berhasil ditambahkan");
+        return response()->json("Data petugas berhasil ditambahkan");
     }
 
     /**

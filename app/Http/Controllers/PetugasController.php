@@ -56,7 +56,7 @@ class PetugasController extends Controller
     {
         //
         Petugas::where('id', $id)->update($request->all());
-        return response()->json("Data berhasil diupdate");
+        return response()->json("Data Petugas berhasil diupdate");
     }
 
     /**

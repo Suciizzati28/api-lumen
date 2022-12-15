@@ -20,6 +20,19 @@ class PetugasController extends Controller
     }
 
     /**
+     * Display the specified resource.
+     *
+     * @param  \App\Models\Petugas  $petugas
+     * @return \Illuminate\Http\Response
+     */
+    public function getById($id)
+    {
+        $data = Petugas::where('id', $id)->get();
+
+        return response()->json($data);
+    }
+
+    /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response

@@ -18,7 +18,7 @@ $router->get('/', function () use ($router) {
 });
 
 $router->group(['prefix' => 'api'], function () use ($router) {
-    $router->get('book',  ['uses' => 'BookController@index']);
+    $router->get('book',  ['uses' => 'BookController@index'])
     $router->get('book/{id}', ['uses' => 'BookController@show']);
     $router->delete('book/{id}', ['uses' => 'BookController@destroy']);
     $router->put('book/{id}', ['uses' => 'BookController@update']);

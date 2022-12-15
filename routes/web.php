@@ -26,4 +26,5 @@ $router->group(['prefix' => 'api'], function () use ($router) {
     
     $router->get('petugas',  ['uses' => 'PetugasController@index']);
     $router->post('petugas', ['uses' => 'PetugasController@create']);
+    $router->put('petugas/{id}', ['uses' => 'PetugasController@update']);
 });

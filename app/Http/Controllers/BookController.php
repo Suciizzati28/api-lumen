@@ -14,8 +14,9 @@ class BookController extends Controller
      */
     public function index()
     {
-        //
-        echo "<h1>Ini index</h1>";
+        $data = Book::all();
+
+        return response()->json($data);
     }
 
     /**
@@ -23,9 +24,12 @@ class BookController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
         //
+        Book::create($request->all());
+
+        return response()->json("Data berhasil ditambahkan");
     }
 
     /**
@@ -45,9 +49,11 @@ class BookController extends Controller
      * @param  \App\Models\Book  $book
      * @return \Illuminate\Http\Response
      */
-    public function show(Book $book)
+    public function show($id)
     {
-        //
+        $data = Book::where('id', $id)->get();
+
+        return response()->json($data);
     }
 
     /**
@@ -68,9 +74,11 @@ class BookController extends Controller
      * @param  \App\Models\Book  $book
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Book $book)
+    public function update(Request $request, $id)
     {
         //
+        Book::where('id', $id)->update($request->all());
+        return response()->json("Data berhasil diupdate");
     }
 
     /**
@@ -79,8 +87,9 @@ class BookController extends Controller
      * @param  \App\Models\Book  $book
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Book $book)
+    public function destroy($id)
     {
-        //
+        Book::where('id', $id)->delete();
+        return response()->json("Data berhasil dihapus");
     }
 }

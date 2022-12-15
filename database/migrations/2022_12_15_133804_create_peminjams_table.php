@@ -15,6 +15,9 @@ return new class extends Migration
     {
         Schema::create('peminjam', function (Blueprint $table) {
             $table->id();
+            $table->string('nama');
+            $table->string('alamat');
+            $table->string('no_telp');
             $table->timestamps();
         });
     }

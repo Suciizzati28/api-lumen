@@ -9,6 +9,6 @@ class Petugas extends Model
     //
 
     //protected $table = 'petugas';
-    protected $fillable = ['Nama_Petugas', 'email', 'no telp','alamat'];
+    protected $fillable = ['Nama_Petugas', 'email', 'no_telp','alamat'];
     
 }

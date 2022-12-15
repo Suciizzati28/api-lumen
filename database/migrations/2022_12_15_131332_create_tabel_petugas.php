@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('tabel_petugas', function (Blueprint $table) {
-            $table->increment('id');
+            $table->id();
             $table->string('Nama_Petugas');
             $table->string('email');
             $table->string('no_telp');

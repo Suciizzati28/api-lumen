@@ -32,4 +32,18 @@ class PetugasController extends Controller
         return response()->json("Data berhasil ditambahkan");
     }
 
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Models\Book  $book
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, $id)
+    {
+        //
+        Petugas::where('id', $id)->update($request->all());
+        return response()->json("Data berhasil diupdate");
+    }
+
 }

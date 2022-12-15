@@ -35,7 +35,7 @@ class BookController extends Controller
 
         Book::create($request->all());
 
-        return response()->json("Data berhasil ditambahkan");
+        return response()->json("Data buku berhasil ditambahkan");
     }
 
     /**
@@ -84,7 +84,7 @@ class BookController extends Controller
     {
         //
         Book::where('id', $id)->update($request->all());
-        return response()->json("Data berhasil diupdate");
+        return response()->json("Data buku berhasil diupdate");
     }
 
     /**

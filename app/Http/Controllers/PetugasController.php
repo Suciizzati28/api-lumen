@@ -2,18 +2,21 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Petugas;
 use Illuminate\Http\Request;
 
 class PetugasController extends Controller
 {
     /**
      * Display a listing of the resource.
-     * 
-     * @return \illuminate\Http\Response 
-     * /
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function index()
     {
-        $data = Petugas 
+        $data = Petugas::all();
+
+        return response()->json($data);
     }
 
 }

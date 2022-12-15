@@ -30,7 +30,7 @@ class BookController extends Controller
         $this->validate($request, [
             'judul' => 'required',
             'penulis' => 'required',
-            'genre' => 'required'
+            
         ]);
 
         Book::create($request->all());

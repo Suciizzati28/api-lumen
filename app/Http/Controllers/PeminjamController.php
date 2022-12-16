@@ -112,6 +112,4 @@ class PeminjamController extends Controller
 
         return response()->json("Data berhasil dihapus");
     }
-}
-
-        
+}        

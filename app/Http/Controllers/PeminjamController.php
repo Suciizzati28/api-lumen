@@ -86,7 +86,7 @@ class PeminjamController extends Controller
         $this->validate($request, [
             'nama' => 'required',
             'alamat' => 'required',
-           
+            'no_telp' => 'required'
         ]);
 
         $peminjam = Peminjam::find($id);

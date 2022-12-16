@@ -108,7 +108,7 @@ class PeminjamController extends Controller
     {
         //
         $peminjam = Peminjam::find($id);
-        
+        $peminjam->delete();
 
         return response()->json("Data berhasil dihapus");
     }

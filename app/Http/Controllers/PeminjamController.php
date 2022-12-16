@@ -95,7 +95,7 @@ class PeminjamController extends Controller
         $peminjam->no_telp = $request->input('no_telp');
         $peminjam->save();
 
-        return response()->json("Data berhasil");
+        return response()->json("Data berhasil diubah");
     }
 
     /**
